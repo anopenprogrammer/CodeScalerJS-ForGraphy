@@ -1,0 +1,10 @@
+{
+    "name":"User1",
+    "age":30,
+    "isStudent":false,
+    "address": {
+        "city":"Jind",
+        "pincode": 126102
+    }
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #outerdiv {
+        height: 300px;
+        width: 300px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #middlediv {
+        height: 150px;
+        width: 150px;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outerdiv">
+      <div id="middlediv">
+        <button id="inner">Click here</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("outerdiv").addEventListener("click", () => {
+        setTimeout(() => {
+          console.log("Blue Bubbled after 5 second.");
+        }, "5000");
+      });
+      document.getElementById("middlediv").addEventListener("click", () => {
+        setTimeout(() => {
+          console.log("Purple bubbled after 4 second.");
+        }, "4000");
+      });
+      document.getElementById("inner").addEventListener("click", () => {
+        setTimeout(() => {
+          console.log("Button clicked after 3 second.");
+        }, "3000");
+      });
+      document.getElementById("middlediv").addEventListener(
+        "click",
+        () => {
+          setTimeout(() => {
+            console.log("Inside purple after 2 second.");
+          }, "2000");
+        },
+        true
+      );
+      document.getElementById("outerdiv").addEventListener(
+        "click",
+        () => {
+          setTimeout(() => {
+            console.log("Inside blue after 1 second.");
+          }, "1000");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>
